@@ -25,7 +25,7 @@ new Vue({
             audio.currentTime = 0;
             audio.playbackRate = 0.85;
             audio.play();
-        },
+        }
     },
     mounted: function () {
         this.printConsoleHeader();
@@ -34,7 +34,7 @@ new Vue({
         '<div>',
             '<h1 ref="header">{{ headerText }}</h1>',
             '<img :src="thiefFaceImg" @click="click">',
-            '<h6>created by <a :href="myTelegramLink">@qbbr</a></h6>',
+            '<h6>with ❤ by <a :href="myTelegramLink">@qbbr</a></h6>',
         '</div>'
     ].join('\n')
 });
