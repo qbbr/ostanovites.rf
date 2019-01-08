@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        thiefFaceImg: '/thief-face.jpeg',
+        thiefFaceImg: '/thief-face.png',
         headerText: 'Остановитесь',
         myTelegramLink: 'https://t.me/imqbbr',
         soundPath: '/ostanovites.mp3',
