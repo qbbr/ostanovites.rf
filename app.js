@@ -14,7 +14,7 @@ new Vue({
         printConsoleHeader: function () {
             console.log(' %c!!! %c' + this.headerText + ' %c!!!', 'font-size: 3em; color: #550000;', 'font-size: 3em; color: #990000;', 'font-size: 3em; color: #330000;');
         },
-        click: function (self) {
+        click: function () {
             this.fontSize += this.fontSizeIncrement;
             this.$refs.header.style.fontSize = this.fontSize + 'px';
 
@@ -40,7 +40,7 @@ new Vue({
     template: [
         '<div>',
             '<h1 ref="header">{{ headerText }}</h1>',
-            '<img :src="thiefFaceImg" :class="{ hell: hell }" @click="click()">',
+            '<img :src="thiefFaceImg" :class="{ hell: hell }" @click="click">',
             '<h6>with ❤ by <a :href="myTelegramLink">@qbbr</a></h6>',
         '</div>'
     ].join('\n')
