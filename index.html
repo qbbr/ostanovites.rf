@@ -36,9 +36,60 @@
 <body>
     <div id="app"></div>
 
+    <!--noindex-->
+    <div class="__footer">
+        <small><a href="javascript:;" id="theme-switcher-btn" class="theme-switcher-btn"></a></small>
+    </div>
+    <!--/noindex-->
+
     <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>-->
     <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
     <script src="/app.js" defer></script>
+    <script>
+        const QBBR = { // govnokod hardcopy from qbbr.io
+            MODE_KEY: 'theme',
+            DATA_THEME: 'data-theme',
+            setTheme(mode) {
+                document.documentElement.setAttribute(this.DATA_THEME, mode);
+            },
+            getTheme() {
+                return document.documentElement.getAttribute(this.DATA_THEME);
+            },
+            innvertMode(mode) {
+                return mode === 'dark' ? 'light' : 'dark';
+            },
+            getTheme() {
+                let theme = this.getFromLocalStorage();
+
+                if (!theme) {
+                    theme = this.getFromPrefersColorSchema();
+                }
+
+                return theme;
+            },
+            getFromLocalStorage() {
+                return localStorage.getItem(this.MODE_KEY);
+            },
+            setToLocalStorage(mode) {
+                localStorage.setItem(this.MODE_KEY, mode);
+            },
+            getFromPrefersColorSchema() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            },
+            initSwitcher() {
+                const _ = this;
+                document.getElementById('theme-switcher-btn').onclick = function() {
+                    const mode = _.innvertMode(_.getTheme());
+                    _.setToLocalStorage(mode);
+                    _.setTheme(mode);
+                };
+            },
+            init() {
+                this.setTheme(this.getTheme());
+                this.initSwitcher();
+            }
+        }.init();
+    </script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
