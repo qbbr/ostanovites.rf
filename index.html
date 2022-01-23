@@ -52,9 +52,6 @@
             setTheme(mode) {
                 document.documentElement.setAttribute(this.DATA_THEME, mode);
             },
-            getTheme() {
-                return document.documentElement.getAttribute(this.DATA_THEME);
-            },
             innvertMode(mode) {
                 return mode === 'dark' ? 'light' : 'dark';
             },
