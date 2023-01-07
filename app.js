@@ -40,7 +40,7 @@ new Vue({
     template: [
         '<div>',
             '<h1 ref="header">{{ headerText }}</h1>',
-            '<img :src="thiefFaceImg" :class="{ hell: hell }" @click="click">',
+            '<img class="face" :src="thiefFaceImg" :class="{ hell: hell }" @click="click">',
             '<h6>with ❤ by <a :href="myTelegramLink">@qbbr</a></h6>',
         '</div>'
     ].join('\n')
