@@ -87,12 +87,6 @@ body {
         transition: font-size .3s ease;
     }
 
-    h6 {
-        margin-bottom: 0;
-    }
-
-        h6 a {
-        }
 
     img.face {
         display: block;

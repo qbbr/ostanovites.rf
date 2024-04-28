@@ -1,9 +1,8 @@
 new Vue({
     el: '#app',
     data: {
-        thiefFaceImg: '/thief-face.jpeg',
+        thiefFaceImg: '/very-thief-face.jpeg',
         headerText: 'Остановитесь!1!',
-        myTelegramLink: 'https://t.me/imqbbr',
         soundPath: '/ostanovites.mp3',
         fontSize: 28,
         fontSizeIncrement: 5,
@@ -41,7 +40,8 @@ new Vue({
         '<div>',
             '<h1 ref="header">{{ headerText }}</h1>',
             '<img class="face" :src="thiefFaceImg" :class="{ hell: hell }" @click="click">',
-            '<h6>with ❤ by <a :href="myTelegramLink">@qbbr</a></h6>',
+            '<h5>PEACE ✌️🕊🌷 NO WAR</h5>',
+            '<h6>with ❤ by @qbbr</h6>',
         '</div>'
     ].join('\n')
 });
