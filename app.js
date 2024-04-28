@@ -7,7 +7,8 @@ new Vue({
         fontSize: 28,
         fontSizeIncrement: 5,
         hellCounter: 0,
-        hell: false
+        hell: false,
+        holyTitle: 'do no harm, do not steal, do not lie, be yourself - otherwise you are a bastard animal'
     },
     methods: {
         printConsoleHeader: function () {
@@ -40,7 +41,7 @@ new Vue({
         '<div>',
             '<h1 ref="header">{{ headerText }}</h1>',
             '<img class="face" :src="thiefFaceImg" :class="{ hell: hell }" @click="click">',
-            '<h5>PEACE ✌️🕊🌷 NO WAR</h5>',
+            '<h5 :title="holyTitle">PEACE ✌️🕊🌷 NO WAR</h5>',
             '<h6>with ❤ by @qbbr</h6>',
         '</div>'
     ].join('\n')

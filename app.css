@@ -135,6 +135,10 @@ a {
     filter: invert(100%);
 }
 
+h5 {
+    cursor: help;
+}
+
 .__footer a::before,
 .__footer a::after {
     content: none;
